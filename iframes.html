@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>독립 외부 컨텐츠 iframe 반응형 처리하기_youtube</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+        .inner{
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        #youtubeContent{
+            height: 0;
+            /* height: 56vw; */
+            padding-top: 56%; /* 높이를 죽이면 차선책으로 너비를 기준으로 56%를 계산한다 */
+        }
+
+        #youtubeContent iframe{
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- mashup : 데이터를 끌어와 화면에서 출력하는 것 (외부api 연동) -->
+    <div class="inner">
+        <div id="youtubeContent" class="position-relative">
+            <iframe class="position-absolute" width="100%" src="https://www.youtube.com/embed/STwHSJSA86c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</body>
+</html>
